@@ -16,7 +16,10 @@
 		"object-literal-sort-keys": false,
 		"no-consecutive-blank-lines": false,
 		"semicolon": false,
-		"arrow-parens": false
-
+		"arrow-parens": false,
+		"trailing-comma": false,
+		"curly": false,
+		"no-console": false,
+		"whitespace": false
 	}
 }
