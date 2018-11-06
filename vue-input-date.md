@@ -1,6 +1,6 @@
 ---
 title: vue-input-date
-version: 1.0.0
+version: 2.0.0
 ---
 
 # vue-input-date
@@ -19,25 +19,24 @@ version: 1.0.0
 - custom validation functions accepted
 
 <vp-holder>
-<vue-input-date-2 label="Date 2" format="y/MM/d 20 hh:ii:ss 20 a" hour12/>
-<vue-input-date label="Date:"/>
-<vue-input-date label="With validator (>= today)" required clear-button :fields="{month: 'numeric', day: 'numeric', year: 'numeric'}" :separators="{month: '/', day: '/'}" :validator="(d) => new Date(d).setHours(0,0,0,0) >= new Date().setHours(0,0,0,0)"/>
-<vue-input-date label="Timezone, Slots for year and hour, clear button" clear-button :fields="{ year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', am: true, timezone: true }" :separators="{ month: '/', day: '/', hour: null, minute: ':', am: 5 }"><span class="date label" slot="year">📆</span><span class="date label" slot="hour">   🕰</span></vue-input-date>
-<vue-input-date label="Russian Locale:" :fields="{year: 'numeric', month: 'long', day: 'numeric'}" locale="ru-RU" />
-<vue-input-date label="Force timezone:" clear-button :fields="{ year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', am: true, timezone: true }" :separators="{ month: '/', day: '/', hour: 30, minute: ':', am: 5 }" tz="Europe/London" />
-<vue-input-date label="12H clock:" :fields="{ hour: '2-digit', minute: '2-digit', second: '2-digit', am: true }" :separators="{minute: ':', second: ':'}" hour12 />
-<vue-input-date label="With weekday:" :fields="{ weekday: 'short', month: 'long', day: 'numeric', year: 'numeric'}"/>
-<vue-input-date label="No initial input:" :fields="{ month: 'numeric', day: 'numeric', year: 'numeric' }" :date="null" />
+<vue-input-date label="Default date input:"/>
+<vue-input-date label="With validator (>= today)" required clear-button format="d/m/y" :validator="(d) => new Date(d).setHours(0,0,0,0) >= new Date().setHours(0,0,0,0)"/>
+<vue-input-date label="Timezone, Slots for year and hour, clear button" clear-button format="y/MM/d hh:ii a 5 z" hour12><span class="date label" slot="year">📆</span><span class="date label" slot="hour">   🕰</span></vue-input-date>
+<vue-input-date label="Russian Locale:" locale="ru-RU" format="y/MMM/d"/>
+<vue-input-date label="Force timezone:" clear-button format="y/MM/d 20 hh:ii a 20 z" hour12 tz="Europe/Madrid" />
+<vue-input-date label="12H clock:" format="hh:ii a" hour12 />
+<vue-input-date label="With weekday:" format="y/MMM/d 📆 WWW"/>
+<vue-input-date label="No initial input:" :date="null" />
 
 ```html
-<vue-input-date label="Date:"/>
-<vue-input-date label="With validator (>= today)" required :fields="{month: 'numeric', day: 'numeric', year: 'numeric'}" :separators="{month: '/', day: '/'}" :validator="(d) => new Date(d).setHours(0,0,0,0) >= new Date().setHours(0,0,0,0)"/>
-<vue-input-date label="Timezone, Slots for year and hour, clear button" clear-button :fields="{ year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', am: true, timezone: true }" :separators="{ month: '/', day: 20, hour: ':', minute: null, timezone: 5 }"><span class="date label" slot="year">📆</span><span class="date label" slot="hour">🕰</span></vue-input-date>
-<vue-input-date label="Russian Locale:" :fields="{month: 'long', day: 'numeric', year: 'numeric'}" locale="ru-RU" />
-<vue-input-date label="Force timezone:" :fields="{ year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', am: true, timezone: true }" :separators="{ month: '/', hour: ':', minute: null, timezone: 5 }" tz="Europe/London" />
-<vue-input-date label="12H clock:" :fields="{ hour: '2-digit', minute: '2-digit', second: '2-digit', am: true }" hour12 />
-<vue-input-date label="With weekday:" :fields="{ weekday: 'short', month: 'long', day: 'numeric', year: 'numeric'}" :separators="{ weekday: ',', month: '-', year: null, day: '-'}"/>
-<vue-input-date label="No initial input:" :fields="{ month: 'numeric', day: 'numeric', year: 'numeric' }" :date="null" />
+<vue-input-date label="Default date input:"/>
+<vue-input-date label="With validator (>= today)" required clear-button format="m/d/y" :validator="(d) => new Date(d).setHours(0,0,0,0) >= new Date().setHours(0,0,0,0)"/>
+<vue-input-date label="Timezone, Slots for year and hour, clear button" clear-button format="y/MM/d hh:ii a 5 z" hour12><span class="date label" slot="year">📆</span><span class="date label" slot="hour">   🕰</span></vue-input-date>
+<vue-input-date label="Russian Locale:" locale="ru-RU" format="y/MMM/d"/>
+<vue-input-date label="Force timezone:" clear-button format="y/MM/d 20 hh:ii a 20 z" hour12 tz="Europe/Madrid" />
+<vue-input-date label="12H clock:" format="hh:ii a" hour12 />
+<vue-input-date label="With weekday:" format="y/MMM/d  📆 WWW"/>
+<vue-input-date label="No initial input:" :date="null" />
 ```
 </vp-holder>
 
@@ -54,39 +53,35 @@ version: 1.0.0
 | `locale`       | String   | `en-EN`                       | For the general form and interpretation of the `locale` argument, see the MDN [Intl page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation). |
 | `hour12`       | Boolean  | `false`                       | Should use a 12 hour clock instead of 24.                    |
 | `date`         | Date     |                               | Initial date                                                 |
-| validator      | Function |                               | takes current input value (`Date` object) as an argument. Should return `true` or `false` |
-| `fields`       | Object   | See `fields` prop table       | Object of date fields that the input should contain. The key represents field name, the value represents field format. E.g: `{day: 'numeric', month: 'long'}`. Order matters.<br />See `fields` prop table for available and default values. |
-| `separators`   | Object   | See `separators` prop table   | Object of separator strings for each field. Key represents field name, value is a separator string. Value can also be an Integer – in this case it will represent margin in pixels.<br />See `separators` prop table for available and default values. |
+| `validator`    | Function |                               | takes current input value (`Date` object) as an argument. Should return `true` or `false` |
+| `format`       | String   | `'y/mm/d 20 hh:ii:ss’`        | Format of date input. You can use date tokens to represent fields. Everything else will be interpreted as separators. if a separator is a number, it will mean spacing in pixels.<br />For full list of date tokens see [table below](#format-prop-date-tokens). |
 | `placeholders` | Object   | See `placeholders` prop table | Text placeholders for each field. Key represents field name, value is a placeholder string. <br />See `placeholders` prop table for available and default values. |
 | `errors`       | Object   | See `errors` prop table       | Object of error strings. Keys: `invalid`, `required`, `custom`.<br /> See `errors` prop table for available and default values. |
 
-### `fields` prop
+### `format` prop - date tokens
 
-| key        | possible values                             | default   |
-| ---------- | ------------------------------------------- | --------- |
-| `day`      | `numeric` `2-digit`                         | `numeric` |
-| `weekday`  | `narrow` `short` `long`                     |           |
-| `month`    | `numeric` `2-digit` `narrow` `short` `long` | `numeric` |
-| `year`     | `numeric` `2-digit`                         | `numeric` |
-| `hour`     | `numeric` `2-digit`                         | `2-digit` |
-| `minute`   | `numeric` `2-digit`                         | `2-digit` |
-| `second`   | `numeric` `2-digit`                         | `2-digit` |
-| `am`       | `true`                                      |           |
-| `timezone` | `true`                                      |           |
-
-### `separators` prop
-
-| key        | default |
-| ---------- | ------- |
-| `day`      | `'/'`   |
-| `weekday`  | ` ' '`  |
-| `month`    | `'/'`   |
-| `year`     | ` ' '`  |
-| `hour`     | `':'`   |
-| `minute`   | `':'`   |
-| `second`   | `null`  |
-| `am`       | `null`  |
-| `timezone` | `10`    |
+| token | example value | comment                    |
+| ----- | ------------- | -------------------------- |
+| `y`   | 2019          | Year full                  |
+| `yy`  | 19            | Year 2 digits              |
+| `m`   | 2             | Month number               |
+| `mm`  | 02            | Month 2 digits             |
+| `M`   | F             | Month name, first letter   |
+| `MM`  | Feb           | Month name abbreviated     |
+| `MMM` | February      | Month name full            |
+| `d`   | 3             | Day number                 |
+| `dd`  | 03            | Day 2 digits               |
+| `W`   | M             | Weekday name, first letter |
+| `WW`  | Mon           | Weekday name abbreviated   |
+| `WWW` | Monday        | Weekday name full          |
+| `h`   | 9             | Hour number                |
+| `hh`  | 09            | Hour 2 digits              |
+| `i`   | 5             | Minute number              |
+| `ii`  | 05            | Minute 2 digits            |
+| `s`   | 3             | Second number              |
+| `ss`  | 03            | Second 2 digits            |
+| `a`   | AM            | Meridiem                   |
+| `z`   | Europe/Paris  | Timezone                   |
 
 ### `placeholders` prop
 
@@ -102,7 +97,7 @@ version: 1.0.0
 | `am`       | `null`    |
 | `timezone` | `null`    |
 
-### 
+
 
 ## data
 

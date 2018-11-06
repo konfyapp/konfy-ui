@@ -2,14 +2,14 @@
 .vue-input-date(:selected="selected", :error="!valid", :required="required", :disabled="disabled")
 	input(type="hidden" :name="name" :value="value")
 	.inputs
-		template(v-for="(val, name) in fields")
+		template(v-for="(val, name) in elements.fields")
 			slot(:name="name")
 
 			.field.separator(
-				v-if="Object.keys(separators).includes(name)"
+				v-if="Object.keys(elements.separators).includes(name)"
 				:class="name"
-				:style=" Number.isInteger(separators[name]) ? {width: separators[name] + 'px'} : null"
-			) {{Number.isInteger(separators[name]) ? null : separators[name]}}
+				:style=" Number.isInteger(elements.separators[name]) ? {width: elements.separators[name] + 'px'} : null"
+			) {{Number.isInteger(elements.separators[name]) ? null : elements.separators[name]}}
 
 			.field.weekday(v-if="name === 'weekday'") {{input.weekday}}
 
@@ -58,21 +58,10 @@ export default {
 	name: 'vue-input-date',
 	props: {
 		date: {default(){ return new Date() }},
-
-        fields: {
-            type: Object,
-            default(){
-                return { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }
-            }
-        },
-
-        separators: {
-            type: Object,
-            default(){
-                return { month: '/', day: '/', hour: 20, minute: ':', second: ':' }
-            }
-        },
-
+		format: {
+			type: String,
+			default: 'y/mm/d 20 hh:ii:ss'
+		},
 		placeholders: {
 			type: Object,
 			default(){
@@ -132,16 +121,70 @@ export default {
 				minute: null,
 				second: null,
 				am: null
+			},
+			formatMap: {
+				yy: { year: '2-digit' },
+				y: { year: 'numeric' },
+				mm: { month: '2-digit' },
+				m: { month: 'numeric' },
+				MMM: { month: 'long' },
+				MM: { month: 'short' },
+				M: { month: 'narrow' },
+				dd: { day: '2-digit' },
+				d: { day: 'numeric' },
+				WWW: { weekday: 'long' },
+				WW: { weekday: 'short' },
+				W: { weekday: 'narrow' },
+				hh: { hour: '2-digit' },
+				h: { hour: 'numeric' },
+				ii: { minute: '2-digit' },
+				i: { minute: 'numeric' },
+				ss: { second: '2-digit' },
+				s: { second: 'numeric' },
+				a: { am: true },
+				z: { timezone: true }
 			}
 		}
 	},
 	computed: {
 
+		elements() {
+
+			let fields = {}
+
+			let separators = {}
+
+			let rest = this.format
+
+			let sep = ''
+
+			while (rest.length > 0) {
+				let isKey = false
+				for (const key in this.formatMap) {
+					if (rest.startsWith(key)) {
+						const field = Object.keys(this.formatMap[key])[0]
+						fields = { ...fields, ...this.formatMap[key] }
+						sep = parseInt(sep) || sep
+						if (sep) separators = { ...separators, ...{ [field]: sep } }
+						sep = ''
+						rest = rest.replace(RegExp(`^${key}`), '')
+						isKey = true
+						break
+					}
+				}
+				if (!isKey) {
+					sep = sep + rest[0]
+					rest = rest.substr(1)
+				}
+			}
+			return {fields, separators}
+		},
+
 		months(){
 			const d = new Date()
 			return Array.apply(0, Array(12)).map( (k,i) => {
 				d.setMonth(i)
-				return d.toLocaleString(this.locale, {month: this.format.month})
+				return d.toLocaleString(this.locale, {month: this.formats.month})
 			})
 		},
 		dateParts(){
@@ -189,7 +232,7 @@ export default {
 				s: parseInt(this.input.second) || 0
 			}
 		},
-		format(){
+		formats(){
 			const defaults = {
 				weekday: 'short',
 				day: 'numeric',
@@ -199,7 +242,7 @@ export default {
 				minute: '2-digit',
 				second: '2-digit'
 			}
-			return {...defaults, ...this.fields}
+			return {...defaults, ...this.elements.fields}
 		},
 		supportsEventData(){
 			const EventData = new InputEvent('a')
@@ -229,8 +272,8 @@ export default {
 				this.phrase = ''
 				return
 			}
-			if (['numeric', '2-digit'].includes(this.format[type]) && this.phrase.length >= 2 && type !== 'year') this.phrase = ''
-			if (['narrow', 'short'].includes(this.format[type]) && this.phrase.length >= 3) this.phrase = ''
+			if (['numeric', '2-digit'].includes(this.formats[type]) && this.phrase.length >= 2 && type !== 'year') this.phrase = ''
+			if (['narrow', 'short'].includes(this.formats[type]) && this.phrase.length >= 3) this.phrase = ''
 			this.phrase = (this.phrase + input.slice(-1)).toLowerCase()
 			this.clearLookup = setTimeout( () => {
 				this.phrase = ''
@@ -247,14 +290,14 @@ export default {
 			let second = Math.max(0, Math.min(59, parseInt(this.phrase) ) )
 			if (isNaN(second)) return
 			second = second.toString()
-			if (second.length < 2 && this.format.second === '2-digit') second = '0' + second
+			if (second.length < 2 && this.formats.second === '2-digit') second = '0' + second
 			this.input.second = second
 		},
 		lookupMinute(){
 			let minute = Math.max(0, Math.min(59, parseInt(this.phrase) ) )
 			if (isNaN(minute)) return
 			minute = minute.toString()
-			if (minute.length < 2 && this.format.minute === '2-digit') minute = '0' + minute
+			if (minute.length < 2 && this.formats.minute === '2-digit') minute = '0' + minute
 			this.input.minute = minute
 		},
 		lookupHour(){
@@ -265,14 +308,14 @@ export default {
 				this.input.am = false
 			}
 			hour = hour.toString()
-			if (hour.length < 2 && this.format.hour === '2-digit') hour = '0' + hour
+			if (hour.length < 2 && this.formats.hour === '2-digit') hour = '0' + hour
 			this.input.hour = hour
 		},
 		lookupDay(){
 			let day = Math.max(1, Math.min(31, parseInt(this.phrase) ) )
 			if (isNaN(day)) return
 			day = day.toString()
-			if (day.length < 2 && this.format.day === '2-digit') day = '0' + day
+			if (day.length < 2 && this.formats.day === '2-digit') day = '0' + day
 			this.input.day = day
 		},
 		lookupMonth(){
@@ -335,7 +378,7 @@ export default {
 		},
 		inputFromValue(k){
 			if (!this.value) return this.input[k] = null
-			const options = {[k]: this.format[k], hour12: this.hour12, timeZone: this.tz}
+			const options = {[k]: this.formats[k], hour12: this.hour12, timeZone: this.tz}
 			this.input[k] = new Date(this.value).toLocaleString( this.locale, options )
 
 			if (k === 'am'){
@@ -344,9 +387,9 @@ export default {
 			if (this.hour12){
 				// get rid of AM from hour
 				this.input.hour = parseInt(this.input.hour).toString()
-				if (this.format.hour === '2-digit' && this.input.hour.length < 2) this.input.hour = '0' + this.input.hour
+				if (this.formats.hour === '2-digit' && this.input.hour.length < 2) this.input.hour = '0' + this.input.hour
 			}
-			if ( this.format[k] === '2-digit' && this.input[k].length < 2){
+			if ( this.formats[k] === '2-digit' && this.input[k].length < 2){
 				this.input[k] = '0' + this.input[k]
 			}
 		},
@@ -420,7 +463,7 @@ export default {
 		},
 		input: {
 			handler(){
-				for (let k in this.fields) this.expandInput(k)
+				for (let k in this.elements.fields) this.expandInput(k)
 			},
 			deep: true
 		},
@@ -433,7 +476,7 @@ export default {
 		}
 	},
 	mounted(){
-		for (let k in this.fields) this.expandInput(k)
+		for (let k in this.elements.fields) this.expandInput(k)
 		if (!this.value && this.date) this.value = this.date
 	}
 }
@@ -487,7 +530,7 @@ input.field
 	appearance none
 	vertical-align middle
 	cursor pointer
-	padding 0 2px
+	padding 0 1px
 	color var(--vue-input-text-color)
 	font-family var(--vue-input-font-family)
 	font-size 1em
@@ -508,7 +551,7 @@ input.field
 	outline none
 	border none
 	width auto
-	padding 0 2px
+	padding 0 1px
 	background var(--vue-input-background-color)
 	&:hover
 		background var(--vue-input-hover-background-color)
