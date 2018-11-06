@@ -1,6 +1,13 @@
 {
-  "devDependencies": {
-    "pug": "^2.0.3",
-    "pug-plain-loader": "^1.0.0"
-  }
+	"scripts": {
+		"dev": "vuepress dev",
+		"build": "vuepress build"
+	},
+	"devDependencies": {
+		"pug": "^2.0.3",
+		"pug-plain-loader": "^1.0.0"
+	},
+	"dependencies": {
+		"vuepress": "^1.0.0-alpha.19"
+	}
 }
