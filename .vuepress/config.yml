@@ -1,0 +1,19 @@
+title: Konfy UI
+description: Vue components for konfy app
+evergreen: false
+markdown:
+    toc:
+        includeLevel: [1, 2, 3]
+themeConfig:
+    sidebar:
+    - vue-button
+    - vue-button-alt
+    - vue-button-group
+    - vue-input
+    - vue-input-date
+    - vue-select
+    - vue-switch
+    - vue-file-tray
+    - vue-meter
+    - vue-google-map
+    - vue-google-places
