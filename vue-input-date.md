@@ -20,35 +20,21 @@ version: 2.0.1
 
 <vp-holder>
 <vue-input-date label="Default date input:"/>
-```html
-<vue-input-date label="Default date input:"/>
-```
 <vue-input-date label="With validator (>= today)" required clear-button format="d/m/y" :validator="(d) => new Date(d).setHours(0,0,0,0) >= new Date().setHours(0,0,0,0)"/>
-```html
-<vue-input-date label="With validator (>= today)" required clear-button format="m/d/y" :validator="(d) => new Date(d).setHours(0,0,0,0) >= new Date().setHours(0,0,0,0)"/>
-```
 <vue-input-date label="Timezone, Slots for year and hour, clear button" clear-button format="y/MM/d hh:ii a 5 z" hour12><span class="date label" slot="year">📆</span><span class="date label" slot="hour">   🕰</span></vue-input-date>
-```html
-<vue-input-date label="Timezone, Slots for year and hour, clear button" clear-button format="y/MM/d hh:ii a 5 z" hour12><span slot="year">📆</span><span slot="hour">   🕰</span></vue-input-date>
-```
 <vue-input-date label="Russian Locale:" locale="ru-RU" format="y/MMM/d"/>
-```html
-<vue-input-date label="Russian Locale:" locale="ru-RU" format="y/MMM/d"/>
-```
 <vue-input-date label="Force timezone:" clear-button format="y/MM/d 20 hh:ii a 20 z" hour12 tz="Europe/Madrid" />
-```html
-<vue-input-date label="Force timezone:" clear-button format="y/MM/d 20 hh:ii a 20 z" hour12 tz="Europe/Madrid" />
-```
 <vue-input-date label="12H clock:" format="hh:ii a" hour12 />
-```html
-<vue-input-date label="12H clock:" format="hh:ii a" hour12 />
-```
 <vue-input-date label="With weekday:" format="y/MMM/d 📆 WWW"/>
-```html
-<vue-input-date label="With weekday:" format="y/MMM/d  📆 WWW"/>
-```
 <vue-input-date label="No initial input:" :date="null" />
 ```html
+<vue-input-date label="Default date input:"/>
+<vue-input-date label="With validator (>= today)" required clear-button format="m/d/y" :validator="(d) => new Date(d).setHours(0,0,0,0) >= new Date().setHours(0,0,0,0)"/>
+<vue-input-date label="Timezone, Slots for year and hour, clear button" clear-button format="y/MM/d hh:ii a 5 z" hour12><span slot="year">📆</span><span slot="hour">   🕰</span></vue-input-date>
+<vue-input-date label="Russian Locale:" locale="ru-RU" format="y/MMM/d"/>
+<vue-input-date label="Force timezone:" clear-button format="y/MM/d 20 hh:ii a 20 z" hour12 tz="Europe/Madrid" />
+<vue-input-date label="12H clock:" format="hh:ii a" hour12 />
+<vue-input-date label="With weekday:" format="y/MMM/d  📆 WWW"/>
 <vue-input-date label="No initial input:" :date="null" />
 ```
 </vp-holder>
