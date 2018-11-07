@@ -28,7 +28,9 @@ mapstyle:
 
 # vue-google-map
 <Badge :text="$page.frontmatter.version" type="warn"/>
-<Badge text="Work in progress" type="error"/>
+<Badge text="work in progress" type="error"/>
+
+*This component is fully functional, but there might be soon some breaking changes to the API.*
 
 This component renders google map with markers. Custom styles available. Almost all google map options supported through props.
 
