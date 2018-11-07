@@ -47,7 +47,7 @@
 				@keydown.right="focusNext(name, 1)"
 			) {{ input.am ? 'AM' : 'PM' }}
 			.field.timezone( v-if="name === 'timezone'" ) {{ tzLabel }}
-	button.clear(v-if="clearButton && !disabled" @click="value = null" aria-label="clear input") ×
+	a.clear(v-if="clearButton && !disabled" @click="value = null" aria-label="clear input") ×
 	label {{label}}
 	#info
 		.errors(v-if="error") {{errors[error]}}
@@ -60,7 +60,7 @@ export default {
 		date: {default(){ return new Date() }},
 		format: {
 			type: String,
-			default: 'y/mm/d 20 hh:ii:ss'
+			default: 'y/mm/d 20 hh:ii'
 		},
 		placeholders: {
 			type: Object,
@@ -566,7 +566,7 @@ label
 	font-size .8em
 	transition all .2s ease
 	font-family var(--vue-input-label-font-family)
-.clear
+a.clear
 	display none
 	appearance none
 	outline none
@@ -574,22 +574,22 @@ label
 	cursor pointer
 	right 0
 	bottom .5em
-	width 1em
-	height 1em
-	font-size 1em
-	line-height 1px
+	width 16px
+	height 16px
 	border-radius 50%
 	border 1px solid rgba(black .6)
 	padding 0
 	background-color transparent
-	color rgba(black .6)
+	font-size 14px
+	line-height 14px
 	text-align center
 	vertical-align middle
-	font-family system-ui
+	color rgba(black, .6)
 	&:hover
 		background-color rgba(black .5)
 		border 1px solid transparent
 		color white
+		text-decoration none
 .vue-input-date:hover, .vue-input-date[selected]
 	.clear
 		display block
