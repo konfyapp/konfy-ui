@@ -1,6 +1,6 @@
 ---
 title: vue-input-date
-version: 2.0.0
+version: 2.0.1
 ---
 
 # vue-input-date
@@ -31,7 +31,7 @@ version: 2.0.0
 ```html
 <vue-input-date label="Default date input:"/>
 <vue-input-date label="With validator (>= today)" required clear-button format="m/d/y" :validator="(d) => new Date(d).setHours(0,0,0,0) >= new Date().setHours(0,0,0,0)"/>
-<vue-input-date label="Timezone, Slots for year and hour, clear button" clear-button format="y/MM/d hh:ii a 5 z" hour12><span class="date label" slot="year">📆</span><span class="date label" slot="hour">   🕰</span></vue-input-date>
+<vue-input-date label="Timezone, Slots for year and hour, clear button" clear-button format="y/MM/d hh:ii a 5 z" hour12><span slot="year">📆</span><span slot="hour">   🕰</span></vue-input-date>
 <vue-input-date label="Russian Locale:" locale="ru-RU" format="y/MMM/d"/>
 <vue-input-date label="Force timezone:" clear-button format="y/MM/d 20 hh:ii a 20 z" hour12 tz="Europe/Madrid" />
 <vue-input-date label="12H clock:" format="hh:ii a" hour12 />

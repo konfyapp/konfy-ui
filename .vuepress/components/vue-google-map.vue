@@ -21,13 +21,13 @@ export default {
 		disableZoom: Boolean,
 		minZoom: Number,
 		maxZoom: Number,
-		mapType: { type: String, default: 'terrain' },
+		mapTypeId: { type: String, default: 'terrain' },
 		draggable: Boolean,
 		noAutoTilt: Boolean,
 		disableDefaultUi: Boolean,
 		mapTypeControl: Boolean,
 		streetViewControl: Boolean,
-		fitToMarkers: Boolean,
+		fitToMarkers: {type: Boolean, default: true},
 		singleInfoWindow: Boolean,
 		mouseEvents: Boolean,
 		dragEvents: Boolean,
@@ -52,7 +52,7 @@ export default {
 				maxZoom: Number(this.maxZoom),
 				minZoom: Number(this.minZoom),
 				tilt: this.noAutoTilt ? 0 : 45,
-				mapTypeId: this.mapType,
+				mapTypeId: this.mapTypeId,
 				disableDefaultUI: this.disableDefaultUi,
 				mapTypeControl: !this.disableDefaultUi && this.mapTypeControl,
 				streetViewControl: !this.disableDefaultUi && this.streetViewControl,
@@ -91,10 +91,10 @@ export default {
 			let mapMarkers = []
 			for (let marker of this.markers) {
 				const info = marker.info
-
 				const computedMarkerOptions = {
 					map: this.map,
-					animation: google.maps.Animation[marker.animation]
+					animation: google.maps.Animation[marker.animation],
+					icon: marker.icon
 				}
 				const markerOptions = {...marker, ...computedMarkerOptions}
 
@@ -145,6 +145,7 @@ export default {
 <style scoped lang='stylus'>
 .google-map
 	width: 100%
+	height 40vh
 	position: relative
 	.map
 		width: 100%

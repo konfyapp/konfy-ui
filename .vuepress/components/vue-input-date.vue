@@ -35,7 +35,7 @@
 				:placeholder="placeholders[name]"
 				:value="input[name]"
 				)
-			button.field.am-switch(
+			a.field.am-switch(
 				v-if="hour12 && name === 'am'"
 				ref="am"
 				@focus="selected = true"
@@ -47,7 +47,7 @@
 				@keydown.right="focusNext(name, 1)"
 			) {{ input.am ? 'AM' : 'PM' }}
 			.field.timezone( v-if="name === 'timezone'" ) {{ tzLabel }}
-	button.clear(v-if="clearButton && !disabled" @click="value = null") ×
+	button.clear(v-if="clearButton && !disabled" @click="value = null" aria-label="clear input") ×
 	label {{label}}
 	#info
 		.errors(v-if="error") {{errors[error]}}
@@ -513,10 +513,9 @@ export default {
 	align-items center
 	line-height 1em
 .field
-	text-align center
 	height 2em
-	line-height 2em
 	font-size 1em
+	line-height 2em
 	padding 0
 	color var(--vue-input-text-color)
 .vue-input-date[disabled]
@@ -526,32 +525,30 @@ export default {
 		&:hover
 			background none
 input.field
-	display inline-block
 	appearance none
 	vertical-align middle
+	text-align center
 	cursor pointer
 	padding 0 1px
 	color var(--vue-input-text-color)
 	font-family var(--vue-input-font-family)
 	font-size 1em
-	background var(--vue-input-background-color)
 	border none
 	outline none
 	caret-color: transparent 
 	&.ff
 		padding-top 3px
 		height calc(2em - 3px)
-	&:hover
-		background var(--vue-input-hover-background-color)
-	&:focus
-		background var(--vue-input-focus-background-color)
-		color var(--vue-input-select-color)
-.am-switch
+a.am-switch
 	cursor pointer
 	outline none
 	border none
 	width auto
 	padding 0 1px
+	font-weight initial
+	&:hover
+		text-decoration none
+input.field, .am-switch
 	background var(--vue-input-background-color)
 	&:hover
 		background var(--vue-input-hover-background-color)
@@ -588,6 +585,7 @@ label
 	color rgba(black .6)
 	text-align center
 	vertical-align middle
+	font-family system-ui
 	&:hover
 		background-color rgba(black .5)
 		border 1px solid transparent

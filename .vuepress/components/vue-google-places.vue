@@ -280,5 +280,9 @@ label
 	color: var(--vue-input-error-color)
 .info
 	color: var(--vue-input-blur-color)
-
+</style>
+<style lang="stylus">
+// Google Places widget
+.pac-item
+	font-family system-ui
 </style>

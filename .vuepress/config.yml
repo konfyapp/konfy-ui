@@ -1,11 +1,12 @@
 title: Konfy UI
-description: Vue components for konfy app
+description: A missing suite of Vue components for common tasks.
 evergreen: false
 markdown:
     toc:
         includeLevel: [1, 2, 3]
 themeConfig:
     sidebar:
+    - guide
     - vue-button
     - vue-button-alt
     - vue-button-group
@@ -17,3 +18,7 @@ themeConfig:
     - vue-meter
     - vue-google-map
     - vue-google-places
+head:
+    -
+        - script
+        - src: https://maps.googleapis.com/maps/api/js?key=AIzaSyBUavk16gEzOiZhnuIdDQCKEgqXpBQb7ks&libraries=places

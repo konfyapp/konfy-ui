@@ -1,9 +1,10 @@
 {
 	"scripts": {
-		"dev": "vuepress dev",
+		"dev": "cross-env vuepress dev",
 		"build": "vuepress build"
 	},
 	"devDependencies": {
+		"cross-env": "^5.2.0",
 		"pug": "^2.0.3",
 		"pug-plain-loader": "^1.0.0"
 	},

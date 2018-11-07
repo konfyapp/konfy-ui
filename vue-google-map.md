@@ -1,30 +1,71 @@
 ---
 title: vue-google-map
-version: 1.0.0
+version: 0.2.0
+markers:
+  -
+    position:
+      lat: 52.5
+      lng: 13.2
+    icon: http://localhost:8080/map-marker@2x.png
+mapstyle:
+  - featureType: poi
+    elementType: geometry.fill
+    stylers:
+    - color: "#f0f0f0"
+    - saturation: -100
+    - lightness: 41
+  - featureType: landscape
+    elementType: geometry.fill
+    stylers:
+    - color: "#ffffff"
+  - featureType: road.highway
+    elementType: geometry.fill
+    stylers:
+    - saturation: -100
+    - lightness: 100
+
 ---
 
 # vue-google-map
-<Badge :text="$page.frontmatter.version"/>
+<Badge :text="$page.frontmatter.version" type="warn"/>
+<Badge text="Work in progress" type="error"/>
 
 This component renders google map with markers. Custom styles available. Almost all google map options supported through props.
 
 ::: warning
-This component **does not** add the google API script tag to your application, so make sure you add it in the head of your app. The API is source here: https://maps.googleapis.com/maps/api/js?key=YOUR-API-KEY
+This component **does not** add the google API script tag to your application, so make sure you add it in the head of your app. The API source is here: https://maps.googleapis.com/maps/api/js?key=YOUR-API-KEY
 :::
-
 ---
 
-## props:
+<vp-holder>
+#### Draggable map
+<vue-google-map :markers="[{position: {lat: 52.5, lng: 13.2}}]" :zoom="7" draggable/>
+```html
+<vue-google-map :markers="[{position: {lat: 52.5, lng: 13.2}}]" :zoom="7" draggable/>
+```
+#### Satelite view, custom marker
+<vue-google-map :markers="$page.frontmatter.markers" :zoom="7" mapTypeId="satellite"/>
+```html
+<vue-google-map :markers="markers" :zoom="7" mapTypeId="satellite"/>
+```
+#### Custom styling, custom marker
+<vue-google-map :markers="$page.frontmatter.markers" :styles="$page.frontmatter.mapstyle"/>
+```html
+<vue-google-map :markers="markers" :styles="mapstyle"/>
+```
+</vp-holder>
+
+## props
 
 | property            | type    | default     | comment                       |
 | ------------------- | ------- | ----------- | ----------------------------- |
 | `lat`               | Number  | `51`        | initial latitude              |
 | `lng`               | Number  | `0`         | initial longitude             |
-| `zoom`              | zoom    | `14`        | initial zoom                  |
+| `zoom`              | Number  | `14`        | initial zoom                  |
 | `disableZoom`       | Boolean |             | disable zoom                  |
 | `minZoom`           | Number  |             | minimal zoom                  |
 | `maxZoom`           | Number  |             | maximal zoom                  |
-| `mapType`           | String  | `'terrain'` | type of map                   |
+| `mapTypeId`         | String  | `'terrain'` | type of map                   |
 | `draggable`         | Boolean |             | is map draggable              |
 | `noAutoTilt`        | Boolean |             | prevent auto tilt             |
 | `disableDefaultUi`  | Boolean |             | disable default UI            |
@@ -75,7 +116,7 @@ data() {
 
 ---
 
-## data:
+## data
 
 | property     | comment              |
 | ------------ | -------------------- |
@@ -86,7 +127,7 @@ data() {
 
 ---
 
-## methods:
+## methods
 
 | method              | args | comment            |
 | ------------------- | ---- | ------------------ |
@@ -98,7 +139,7 @@ data() {
 
 ---
 
-## events:
+## events
 
 | event            | payload       | comment               |
 | ---------------- | ------------- | --------------------- |
@@ -110,9 +151,9 @@ data() {
 
 ---
 
-#### TODO'S:
+#### TODO'S
 
-map objects
-map polygons
-marker clusters
+- map objects
+- map polygons
+- marker clusters
 
