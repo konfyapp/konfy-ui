@@ -1,7 +1,7 @@
 {
 	"scripts": {
 		"dev": "cross-env vuepress dev",
-		"build": "vuepress build"
+		"build": "vuepress build docs"
 	},
 	"devDependencies": {
 		"cross-env": "^5.2.0",
