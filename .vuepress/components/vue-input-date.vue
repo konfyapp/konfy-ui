@@ -247,9 +247,6 @@ export default {
 		supportsEventData(){
 			const EventData = new InputEvent('a')
 			return EventData.data !== undefined
-		},
-		isFF(){
-			return 'MozAppearance' in document.documentElement.style
 		}
 	},
 	methods: {
@@ -449,6 +446,9 @@ export default {
 			this.error = null
 			this.valid = true
 			return true
+		},
+		isFF(){
+			return 'MozAppearance' in document.documentElement.style
 		}
 	},
 	watch: {
