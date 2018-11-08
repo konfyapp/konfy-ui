@@ -1,0 +1,28 @@
+{
+	"name": "@konfy/vue-file-tray",
+	"version": "1.0.0",
+	"description": "Vue component for adding files to the browser",
+	"main": "dist/VueFileTray.common.js",
+	"unpkg": "dist/VueFileTray.umd.min.js",
+	"browser": {
+		"./sfc": "VueFileTray.vue"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/konfyapp/konfy-ui.git"
+	},
+	"keywords": [
+		"Vue",
+		"SFC",
+		"File upload"
+	],
+	"author": "Jan Franciszek Cieślak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/konfyapp/konfy-ui/issues"
+	},
+	"homepage": "https://github.com/konfyapp/konfy-ui#readme"
+}

@@ -1,0 +1,28 @@
+{
+	"name": "@konfy/vue-input-date",
+	"version": "2.0.1",
+	"description": "Versatile date input, supporting date, time and locale formats",
+	"main": "dist/VueInputDate.common.js",
+	"unpkg": "dist/VueInputDate.umd.min.js",
+	"browser": {
+		"./sfc": "VueInputDate.vue"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/konfyapp/konfy-ui.git"
+	},
+	"keywords": [
+		"Vue",
+		"SFC",
+		"Date input"
+	],
+	"author": "Jan Franciszek Cieślak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/konfyapp/konfy-ui/issues"
+	},
+	"homepage": "https://github.com/konfyapp/konfy-ui#readme"
+}

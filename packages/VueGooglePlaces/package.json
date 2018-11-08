@@ -1,0 +1,28 @@
+{
+	"name": "@konfy/vue-google-places",
+	"version": "0.0.1",
+	"description": "Vue component for google place search",
+	"main": "dist/VueGooglePlaces.common.js",
+	"unpkg": "dist/VueGooglePlaces.umd.min.js",
+	"browser": {
+		"./sfc": "VueGooglePlaces.vue"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/konfyapp/konfy-ui.git"
+	},
+	"keywords": [
+		"Vue",
+		"SFC",
+		"Google places"
+	],
+	"author": "Jan Franciszek Cieślak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/konfyapp/konfy-ui/issues"
+	},
+	"homepage": "https://github.com/konfyapp/konfy-ui#readme"
+}

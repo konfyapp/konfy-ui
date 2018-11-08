@@ -1,0 +1,28 @@
+{
+	"name": "@konfy/vue-google-map",
+	"version": "0.2.0",
+	"description": "Vue component for google maps with markers",
+	"main": "dist/VueGoogleMap.common.js",
+	"unpkg": "dist/VueGoogleMap.umd.min.js",
+	"browser": {
+		"./sfc": "VueGoogleMap.vue"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/konfyapp/konfy-ui.git"
+	},
+	"keywords": [
+		"Vue",
+		"SFC",
+		"Google map"
+	],
+	"author": "Jan Franciszek Cieślak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/konfyapp/konfy-ui/issues"
+	},
+	"homepage": "https://github.com/konfyapp/konfy-ui#readme"
+}

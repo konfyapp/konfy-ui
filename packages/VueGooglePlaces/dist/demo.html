@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<title>VueGooglePlaces demo</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="./VueGooglePlaces.umd.js"></script>
+<link rel="stylesheet" href="./VueGooglePlaces.css">
+
+<div id="app">
+  <demo></demo>
+</div>
+
+<script>
+new Vue({
+  components: {
+    demo: VueGooglePlaces
+  }
+}).$mount('#app')
+</script>

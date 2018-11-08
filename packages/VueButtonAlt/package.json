@@ -1,0 +1,25 @@
+{
+	"name": "@konfy/vue-button-alt",
+	"version": "1.0.0",
+	"description": "Button alternative",
+	"main": "dist/VueButtonAlt.common.js",
+	"unpkg": "dist/VueButtonAlt.umd.min.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/konfyapp/konfy-ui.git"
+	},
+	"keywords": [
+		"Vue",
+		"SFC",
+		"Button"
+	],
+	"author": "Jan Franciszek Cieślak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/konfyapp/konfy-ui/issues"
+	},
+	"homepage": "https://github.com/konfyapp/konfy-ui#readme"
+}

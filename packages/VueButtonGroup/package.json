@@ -1,0 +1,28 @@
+{
+	"name": "@konfy/vue-button-group",
+	"version": "1.0.0",
+	"description": "Button group for single or multiple choice",
+	"main": "dist/VueButtonGroup.common.js",
+	"unpkg": "dist/VueButtonGroup.umd.min.js",
+	"browser": {
+		"./sfc": "VueButtonGroup.vue"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/konfyapp/konfy-ui.git"
+	},
+	"keywords": [
+		"Vue",
+		"SFC",
+		"Button group"
+	],
+	"author": "Jan Franciszek Cieślak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/konfyapp/konfy-ui/issues"
+	},
+	"homepage": "https://github.com/konfyapp/konfy-ui#readme"
+}

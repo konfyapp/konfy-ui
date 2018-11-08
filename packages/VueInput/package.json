@@ -1,0 +1,30 @@
+{
+	"name": "@konfy/vue-input",
+	"version": "1.0.0",
+	"description": "A versatile Vue input component with optional validation",
+	"main": "dist/VueInput.common.js",
+	"unpkg": "dist/VueInput.umd.min.js",
+	"browser": {
+		"./sfc": "VueInput.vue"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/konfyapp/konfy-ui.git"
+	},
+	"keywords": [
+		"Vue",
+		"SFC",
+		"text input",
+		"autogrow",
+		"textarea"
+	],
+	"author": "Jan Franciszek Cieślak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/konfyapp/konfy-ui/issues"
+	},
+	"homepage": "https://github.com/konfyapp/konfy-ui#readme"
+}

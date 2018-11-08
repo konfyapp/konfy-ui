@@ -1,0 +1,28 @@
+{
+	"name": "@konfy/vue-switch",
+	"version": "1.0.0",
+	"description": "Boolean switch component",
+	"main": "dist/VueSwitch.common.js",
+	"unpkg": "dist/VueSwitch.umd.min.js",
+	"browser": {
+		"./sfc": "VueSwitch.vue"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/konfyapp/konfy-ui.git"
+	},
+	"keywords": [
+		"Vue",
+		"SFC",
+		"switch"
+	],
+	"author": "Jan Franciszek Cieślak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/konfyapp/konfy-ui/issues"
+	},
+	"homepage": "https://github.com/konfyapp/konfy-ui#readme"
+}

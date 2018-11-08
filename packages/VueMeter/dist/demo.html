@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<title>VueMeter demo</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="./VueMeter.umd.js"></script>
+<link rel="stylesheet" href="./VueMeter.css">
+
+<div id="app">
+  <demo></demo>
+</div>
+
+<script>
+new Vue({
+  components: {
+    demo: VueMeter
+  }
+}).$mount('#app')
+</script>

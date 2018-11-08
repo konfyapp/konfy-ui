@@ -1,0 +1,29 @@
+{
+	"name": "@konfy/vue-meter",
+	"version": "1.0.0",
+	"description": "Vue Component for displaying progress",
+	"main": "dist/VueMeter.common.js",
+	"unpkg": "dist/VueMeter.umd.min.js",
+	"browser": {
+		"./sfc": "VueMeter.vue"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/konfyapp/konfy-ui.git"
+	},
+	"keywords": [
+		"Vue",
+		"SFC",
+		"progress bar",
+		"loader"
+	],
+	"author": "Jan Franciszek Cieślak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/konfyapp/konfy-ui/issues"
+	},
+	"homepage": "https://github.com/konfyapp/konfy-ui#readme"
+}

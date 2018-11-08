@@ -1,0 +1,29 @@
+{
+	"name": "@konfy/vue-select",
+	"version": "1.0.0",
+	"description": "Versatile and feature rich dropdown select component",
+	"main": "dist/VueSelect.common.js",
+	"unpkg": "dist/VueSelect.umd.min.js",
+	"browser": {
+		"./sfc": "VueSelect.vue"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/konfyapp/konfy-ui.git"
+	},
+	"keywords": [
+		"Vue",
+		"SFC",
+		"progress bar",
+		"loader"
+	],
+	"author": "Jan Franciszek Cieślak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/konfyapp/konfy-ui/issues"
+	},
+	"homepage": "https://github.com/konfyapp/konfy-ui#readme"
+}
