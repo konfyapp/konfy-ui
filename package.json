@@ -5,6 +5,7 @@
 	},
 	"devDependencies": {
 		"cross-env": "^5.2.0",
+		"postcss-preset-env": "^6.4.0",
 		"pug": "^2.0.3",
 		"pug-plain-loader": "^1.0.0"
 	},
