@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"dev": "cross-env vuepress dev",
+		"dev": "cross-env vuepress dev docs",
 		"build": "vuepress build docs"
 	},
 	"devDependencies": {
