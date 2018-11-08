@@ -1,9 +1,12 @@
 {
 	"name": "@konfy/vue-button",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Vue Button",
 	"main": "dist/VueButton.common.js",
 	"unpkg": "dist/VueButton.umd.min.js",
+	"browser": {
+		"./sfc": "VueButton.vue"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
