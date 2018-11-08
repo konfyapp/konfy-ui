@@ -1,10 +1,11 @@
 ---
 props:title: vue-google-places
-version: 0.0.1
 ---
 
 # vue-google-places
-<Badge :text="$page.frontmatter.version" type="warn"/>
+
+![npm](https://img.shields.io/npm/v/@konfy/vue-google-places.svg)
+
 <Badge text="work in progress" type="error"/>
 
 ::: warning
@@ -12,6 +13,13 @@ This component **does not** add the google API script tag to your application, s
 :::
 
 ---
+
+## Installation
+
+```bash
+yarn add @konfy/vue-google-places
+```
+
 
 <vp-holder>
 <vue-google-places></vue-google-places>

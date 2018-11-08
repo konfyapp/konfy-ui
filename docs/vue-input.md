@@ -1,6 +1,5 @@
 ---
 title: vue-input
-version: 1.0.0
 ---
 
 <style scoped lang='stylus'>
@@ -11,7 +10,8 @@ version: 1.0.0
 </style>
 
 # vue-input
-<Badge :text="$page.frontmatter.version"/>
+
+![npm](https://img.shields.io/npm/v/@konfy/vue-input.svg)
 
 - A versatile input with optional validation.
 `vue-input` can be of all standard html input types (`text` `number` `date`, etc.) 
@@ -19,6 +19,12 @@ version: 1.0.0
 - all standard html input attributes are also valid with `vue-input`
 - validation on change or on blur
 - built-in validation for most common cases (email, length, equality), with possibility to pass custom regex validators
+
+## Installation
+
+```bash
+yarn add @konfy/vue-input
+```
 
 ---
 

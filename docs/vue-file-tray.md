@@ -3,9 +3,15 @@ title: vue-file-tray
 version: 1.0.0
 ---
 # vue-file-tray 
-<Badge :text="$page.frontmatter.version"/>
+![npm](https://img.shields.io/npm/v/@konfy/vue-file-tray.svg)
 
 Component for adding files to the browser.
+
+## Installation
+
+```bash
+yarn add @konfy/vue-file-tray
+```
 
 ::: warning
 **IMPORTANT**: This component uses JavaScript [canvas.toBlob](http://www.w3.org/TR/html5/scripting-1.html#dom-canvas-toblob) method. This method is not supported by mobile browsers. To work properly in mobile browsers, you need a polyfill. You can add [blueimp-canvas-to-blob](https://github.com/blueimp/JavaScript-Canvas-to-Blob) to your project.

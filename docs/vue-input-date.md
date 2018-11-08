@@ -4,7 +4,9 @@ version: 2.0.1
 ---
 
 # vue-input-date
-<Badge :text="$page.frontmatter.version"/>
+
+![npm](https://img.shields.io/npm/v/@konfy/vue-input-date.svg)
+
 
 - very versatile date input, supporting date and time
 - based on native javascript date features, no dependencies
@@ -17,6 +19,13 @@ version: 2.0.1
 - Use ← → to move between date elements, ↑ ↓ to increase or decrease
 - Auto-complete and auto-correct on typing
 - custom validation functions accepted
+
+## Installation
+
+```bash
+yarn add @konfy/vue-input-date
+```
+
 
 <vp-holder>
 <vue-input-date label="Default date input:"/>

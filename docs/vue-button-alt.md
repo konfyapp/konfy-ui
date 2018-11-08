@@ -1,12 +1,17 @@
 ---
 title: vue-button-alt
-version: 1.0.0
 ---
 
 # vue-button-alt
-<Badge :text="$page.frontmatter.version"/>
+![npm](https://img.shields.io/npm/v/@konfy/vue-button-alt.svg)
 
 Alternative light button
+
+## Installation
+
+```bash
+yarn add @konfy/vue-button-alt
+```
 
 <vp-holder>
 <vue-button-alt type="float">I am floating</vue-button-alt>

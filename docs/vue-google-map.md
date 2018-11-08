@@ -27,12 +27,20 @@ mapstyle:
 ---
 
 # vue-google-map
-<Badge :text="$page.frontmatter.version" type="warn"/>
+
+![npm](https://img.shields.io/npm/v/@konfy/vue-google-map.svg)
+
 <Badge text="work in progress" type="error"/>
 
 *This component is fully functional, but there might be soon some breaking changes to the API.*
 
 This component renders google map with markers. Custom styles available. Almost all google map options supported through props.
+
+## Installation
+
+```bash
+yarn add @konfy/vue-google-map
+```
 
 ::: warning
 This component **does not** add the google API script tag to your application, so make sure you add it in the head of your app. The API source is here: https://maps.googleapis.com/maps/api/js?key=YOUR-API-KEY

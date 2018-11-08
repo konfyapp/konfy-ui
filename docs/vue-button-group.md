@@ -1,11 +1,17 @@
 ---
 title: vue-button-group
-version: 1.0.0
 options: [Apples, Oranges, Bananas, Peaches]
 ---
-# vue-button-group 
-<Badge :text="$page.frontmatter.version"/>
+# vue-button-group
+![npm](https://img.shields.io/npm/v/@konfy/vue-button-group.svg)
+
 Single or multiple choice input. Great when you need it in concise, horizontal space.
+
+## Installation
+
+```bash
+yarn add @konfy/vue-button-group
+```
 
 <vp-holder>
 

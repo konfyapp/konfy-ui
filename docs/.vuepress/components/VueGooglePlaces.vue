@@ -101,9 +101,6 @@ export default {
 			this.$emit('change', this.value)
 		},
 
-		onKeyPress(event) {
-		},
-
 		clear() {
 			this.value = ''
 		},

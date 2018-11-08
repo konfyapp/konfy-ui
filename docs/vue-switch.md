@@ -1,6 +1,5 @@
 ---
 title: vue-switch
-version: 1.0.0
 ---
 <style scoped lang='stylus'>
 .vue-switch.custom
@@ -11,7 +10,15 @@ version: 1.0.0
 </style>
 
 # vue-switch
-<Badge :text="$page.frontmatter.version"/>
+
+![npm](https://img.shields.io/npm/v/@konfy/vue-switch.svg)
+
+## Installation
+
+```bash
+yarn add @konfy/vue-switch
+```
+
 
 <vp-holder>
 Sizes: S / M / L (default m)

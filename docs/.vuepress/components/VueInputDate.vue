@@ -85,7 +85,7 @@ export default {
 		},
 		validator: {
 			type: Function,
-			default(d){ return true }
+			default(){ return true }
 		},
 		errors: {
 			type: Object,

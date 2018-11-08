@@ -11,13 +11,20 @@ flavors: [vanila, chocolate, strawberry, banana, orange, cream, cookie dough, pi
 </style>
 
 # vue-select
-<Badge :text="$page.frontmatter.version"/>
+
+![npm](https://img.shields.io/npm/v/@konfy/vue-select.svg)
 
 - versatile and feature rich dropdown select component
 - Allows for selecting single or multiple values
 - Optionally searchable
 - Optional validation
 - Optionally mutable – user can select values from list, but also add own
+
+## Installation
+
+```bash
+yarn add @konfy/vue-select
+```
 
 ---
 

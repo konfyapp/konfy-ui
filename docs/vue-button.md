@@ -1,11 +1,17 @@
 ---
 title: vue-button
-version: 1.0.0
 ---
 # vue-button
-<Badge :text="$page.frontmatter.version"/>
+![npm](https://img.shields.io/npm/v/@konfy/vue-button.svg)
+
 
 A stateful button component.
+
+## Installation
+
+```bash
+yarn add @konfy/vue-button
+```
 
 <vp-holder>
 <vue-button> Default state </vue-button>

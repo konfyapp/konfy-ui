@@ -1,6 +1,5 @@
 ---
 title: vue-meter
-version: 1.0.0
 ---
 <style scoped lang='stylus'>
     svg.vue-meter.red
@@ -10,7 +9,7 @@ version: 1.0.0
 
 # vue-meter 
 
-<Badge :text="$page.frontmatter.version"/>
+![npm](https://img.shields.io/npm/v/@konfy/vue-meter.svg)
 
 Component for displaying progress
 
@@ -18,6 +17,12 @@ Component for displaying progress
 - text percentage
 - default slot for text
 - customizable size, color, etc
+
+## Installation
+
+```bash
+yarn add @konfy/vue-meter
+```
 
 <vp-holder>
 
