@@ -1,6 +1,6 @@
 {
 	"name": "@konfy/vue-input-date",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "Versatile date input, supporting date, time and locale formats",
 	"main": "dist/VueInputDate.common.js",
 	"unpkg": "dist/VueInputDate.umd.min.js",
