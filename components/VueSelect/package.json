@@ -1,6 +1,6 @@
 {
 	"name": "@konfy/vue-select",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Versatile and feature rich dropdown select component",
 	"main": "dist/VueSelect.common.js",
 	"unpkg": "dist/VueSelect.umd.min.js",
