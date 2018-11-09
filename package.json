@@ -21,6 +21,7 @@
 		"pug-plain-loader": "^1.0.0"
 	},
 	"dependencies": {
-		"vuepress": "^1.0.0-alpha.19"
+		"vuepress": "^1.0.0-alpha.19",
+		"vuepress-plugin-sitemap": "^2.1.0"
 	}
 }

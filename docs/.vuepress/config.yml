@@ -25,3 +25,10 @@ head:
     -
         - script
         - src: https://maps.googleapis.com/maps/api/js?key=AIzaSyBUavk16gEzOiZhnuIdDQCKEgqXpBQb7ks&libraries=places
+    -
+        - meta
+        - name: google-site-verification
+        - content: qA72lWZLDHIhlVU6baUVKF3pHUtebckRAJWkWopDvp0
+plugins:
+    sitemap:
+        hostname: https://konfy-ui.netlify.com/
