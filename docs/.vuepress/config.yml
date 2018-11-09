@@ -5,19 +5,22 @@ markdown:
     toc:
         includeLevel: [1, 2, 3]
 themeConfig:
+    nav:
+        - text: GitHub
+          link: https://github.com/konfyapp/konfy-ui
     sidebar:
-    - guide
-    - vue-button
-    - vue-button-alt
-    - vue-button-group
-    - vue-input
-    - vue-input-date
-    - vue-select
-    - vue-switch
-    - vue-file-tray
-    - vue-meter
-    - vue-google-map
-    - vue-google-places
+        - guide
+        - vue-button
+        - vue-button-alt
+        - vue-button-group
+        - vue-input
+        - vue-input-date
+        - vue-select
+        - vue-switch
+        - vue-file-tray
+        - vue-meter
+        - vue-google-map
+        - vue-google-places
 head:
     -
         - script
