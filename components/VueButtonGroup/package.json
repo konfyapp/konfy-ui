@@ -1,6 +1,6 @@
 {
 	"name": "@konfy/vue-button-group",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Button group for single or multiple choice",
 	"main": "dist/VueButtonGroup.common.js",
 	"unpkg": "dist/VueButtonGroup.umd.min.js",
