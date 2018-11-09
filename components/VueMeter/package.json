@@ -1,6 +1,6 @@
 {
 	"name": "@konfy/vue-meter",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Vue Component for displaying progress",
 	"main": "dist/VueMeter.common.js",
 	"unpkg": "dist/VueMeter.umd.min.js",
