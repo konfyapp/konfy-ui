@@ -1,6 +1,6 @@
 {
 	"name": "@konfy/vue-input",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A versatile Vue input component with optional validation",
 	"main": "dist/VueInput.common.js",
 	"unpkg": "dist/VueInput.umd.min.js",
