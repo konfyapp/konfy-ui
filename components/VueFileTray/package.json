@@ -1,6 +1,6 @@
 {
 	"name": "@konfy/vue-file-tray",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Vue component for adding files to the browser",
 	"main": "dist/VueFileTray.common.js",
 	"unpkg": "dist/VueFileTray.umd.min.js",
