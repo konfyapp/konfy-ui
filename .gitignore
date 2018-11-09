@@ -2,3 +2,4 @@ node_modules
 npm-debug.log
 www/.vuepress/dist
 docs/.vuepress/dist
+components/**/dist
