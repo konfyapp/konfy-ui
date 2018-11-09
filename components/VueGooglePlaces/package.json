@@ -1,6 +1,6 @@
 {
 	"name": "@konfy/vue-google-places",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Vue component for google place search",
 	"main": "dist/VueGooglePlaces.common.js",
 	"unpkg": "dist/VueGooglePlaces.umd.min.js",
