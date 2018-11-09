@@ -9,3 +9,5 @@ Each component has rich API that allows for many variations and use cases.
 
 ### Customize styling
 All components have minimal default styling and can be customized globaly or locally through CSS variables.
+
+### [Full Documentation](https://konfy-ui.netlify.com/)
