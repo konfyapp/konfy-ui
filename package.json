@@ -16,6 +16,7 @@
 		"build:packages": "yarn build:Button && yarn build:ButtonAlt && yarn build:ButtonGroup && yarn build:FileTray && yarn build:GoogleMap && yarn build:GooglePlaces && yarn build:Input && yarn build:InputDate && yarn build:Meter && yarn build:Select && yarn build:Switch"
 	},
 	"devDependencies": {
+		"@vuepress/plugin-google-analytics": "^1.0.0-alpha.0",
 		"postcss-preset-env": "^6.4.0",
 		"pug": "^2.0.3",
 		"pug-plain-loader": "^1.0.0"
