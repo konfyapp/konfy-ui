@@ -1,6 +1,6 @@
 {
 	"name": "@konfy/vue-switch",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Boolean switch component",
 	"main": "dist/VueSwitch.common.js",
 	"unpkg": "dist/VueSwitch.umd.min.js",
