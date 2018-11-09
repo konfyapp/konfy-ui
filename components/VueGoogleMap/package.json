@@ -1,6 +1,6 @@
 {
 	"name": "@konfy/vue-google-map",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Vue component for google maps with markers",
 	"main": "dist/VueGoogleMap.common.js",
 	"unpkg": "dist/VueGoogleMap.umd.min.js",
