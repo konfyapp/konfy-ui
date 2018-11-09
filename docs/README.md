@@ -2,6 +2,7 @@
 home: true
 actionText: Get Started →
 actionLink: /guide
+heroImage: /illustration.png
 features:
     - 
         title: Light and performant
