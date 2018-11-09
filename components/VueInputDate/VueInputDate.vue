@@ -17,7 +17,7 @@
 				v-if="['day','month','year','hour', 'minute', 'second'].includes(name)"
 				type="tel"
 				:ref="name"
-				:class="[name, {ff: isFF}]"
+				:class="[name, {ff: ff}]"
 				:disabled="disabled"
 				tabindex="0"
 				:size="input[name] ? input[name].length : placeholders[name].length"
@@ -112,6 +112,7 @@ export default {
 			error: null,
 			phrase: '',
 			clearLookup: null,
+			ff: false,
 			input: {
 				weekday: null,
 				day: null,
@@ -476,6 +477,7 @@ export default {
 		}
 	},
 	mounted(){
+		this.ff = 'MozAppearance' in document.documentElement.style
 		for (let k in this.elements.fields) this.expandInput(k)
 		if (!this.value && this.date) this.value = this.date
 	}
@@ -517,6 +519,7 @@ export default {
 	font-size 1em
 	line-height 2em
 	padding 0
+	vertical-align middle
 	color var(--vue-input-text-color)
 .vue-input-date[disabled]
 	.field
