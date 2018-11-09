@@ -1,6 +1,5 @@
 ---
 title: vue-file-tray 
-version: 1.0.0
 ---
 # vue-file-tray 
 ![npm](https://img.shields.io/npm/v/@konfy/vue-file-tray.svg)

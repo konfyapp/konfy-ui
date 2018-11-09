@@ -1,6 +1,5 @@
 ---
 title: vue-input-date
-version: 2.0.1
 ---
 
 # vue-input-date

@@ -1,6 +1,5 @@
 ---
 title: vue-google-map
-version: 0.2.0
 markers:
   -
     position:

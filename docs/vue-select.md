@@ -1,6 +1,5 @@
 ---
 title: vue-select
-version: 1.0.0
 flavors: [vanila, chocolate, strawberry, banana, orange, cream, cookie dough, pistachio]
 ---
 <style scoped lang='stylus'>
