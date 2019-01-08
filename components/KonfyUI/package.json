@@ -1,0 +1,36 @@
+{
+	"name": "@konfy/vue-ui",
+	"version": "1.0.0",
+	"description": "Konfy Vue UI components",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/konfyapp/konfy-ui.git"
+	},
+	"keywords": [
+		"Vue",
+		"SFC",
+		"UI"
+	],
+	"author": "Jan Franciszek Cieślak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/konfyapp/konfy-ui/issues"
+	},
+	"homepage": "https://konfy-ui.netlify.com",
+	"dependencies": {
+		"@konfy/vue-button": "latest",
+		"@konfy/vue-button-alt": "latest",
+		"@konfy/vue-button-group": "latest",
+		"@konfy/vue-file-tray": "latest",
+		"@konfy/vue-google-map": "latest",
+		"@konfy/vue-google-places": "latest",
+		"@konfy/vue-input": "latest",
+		"@konfy/vue-input-date": "latest",
+		"@konfy/vue-meter": "latest",
+		"@konfy/vue-select": "latest",
+		"@konfy/vue-switch": "latest"
+	}
+}

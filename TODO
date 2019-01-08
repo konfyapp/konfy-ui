@@ -1,6 +1,6 @@
 Website maintainance:
 	☐ PWA settings
-	☐ GA
+	✔ GA @started(18-11-10 10:35) @done(18-11-10 11:35) @lasted(1h36s)
 	✔ Sitemap @started(18-11-09 14:30) @done(18-11-09 14:35) @lasted(31s)
 	☐ GitHub pages
 	☐ Bagdes
@@ -9,6 +9,7 @@ Docs:
 	☐ File tray with complex example
 
 Components:
+	☐ install as plugin
 	☐ date-picker
 	☐ carousel
 	☐ tabs
