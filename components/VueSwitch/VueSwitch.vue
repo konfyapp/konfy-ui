@@ -49,7 +49,7 @@ $size-s = 14px
 	--switch-color-on #2181FF
 	--switch-color-off #BBB
 	--switch-color-disabled #F3F3F3
-
+  	box-sizing content-box
 	display inline-block
 	vertical-align middle
 	position relative
@@ -68,6 +68,12 @@ $size-s = 14px
 		width $size-m
 		height $size-m
 		border-radius $size-m
+		content ''
+		background-color white
+		position absolute
+		left 1px
+		top 1px
+		cursor pointer
 	&:active:after
 		width $size-m + 8px
 	&.on:active:after
@@ -79,13 +85,6 @@ $size-s = 14px
 		outline 0
 	&:focus:hover
 		box-shadow none
-	&:after
-		content ''
-		background-color white
-		position absolute
-		left 1px
-		top 1px
-		cursor pointer
 	&.on
 		background-color var(--switch-color-on)
 		border 1px solid var(--switch-color-on)

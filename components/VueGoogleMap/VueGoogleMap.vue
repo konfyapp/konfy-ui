@@ -32,9 +32,9 @@ export default {
 		mouseEvents: Boolean,
 		dragEvents: Boolean,
 		clickEvents: Boolean,
-		styles: { type: Array, deafult(){ return [] } },
-		markers: { type: Array, deafult(){ return [] } },
-		objects: { type: Array, deafult(){ return [] } }
+		styles: { type: Array, default(){ return [] } },
+		markers: { type: Array, default(){ return [] } },
+		objects: { type: Array, default(){ return [] } }
 	},
 	data() {
 		return {
